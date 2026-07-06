@@ -13,7 +13,7 @@ import net.minecraft.util.math.Vec3d;
 
 public class LavaGrief extends Module {
     public LavaGrief() {
-        super(Categories.Misc, "lava-grief", "Разливает лаву под вами (выдает ведро в 1 слот).");
+        super(my.meteor.addon.Addon.CATEGORY, "lava-grief", "Разливает лаву под вами (выдает ведро в 1 слот).");
     }
 
     @EventHandler
