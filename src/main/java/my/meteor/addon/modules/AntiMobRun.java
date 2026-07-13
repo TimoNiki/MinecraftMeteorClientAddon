@@ -72,19 +72,17 @@ public class AntiMobRun extends Module {
                 return;
             }
 
-            // Рассчитываем углы и поворачиваем камеру игрока в сторону бега
+            
             double diffX = escapeTarget.x - mc.player.getX();
             double diffZ = escapeTarget.z - mc.player.getZ();
             float yaw = (float) (Math.toDegrees(Math.atan2(diffZ, diffX)) - 90.0);
             
             mc.player.setYRot(yaw);
 
-            // Зажимаем кнопку ходьбы вперед и принудительно включаем спринт
             mc.options.keyUp.setDown(true);
             mc.player.setSprinting(true);
 
             // --- ЛОГИКА АВТО-ПРЫЖКА ---
-            // Получаем координаты блока прямо перед лицом игрока по направлению его взгляда
             BlockPos posInFront = mc.player.blockPosition().relative(mc.player.getDirection());
             
             // Если игрок ударился о стену горизонтальной коллизией или перед ним сплошной твердый блок
